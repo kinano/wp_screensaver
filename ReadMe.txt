@@ -7,3 +7,5 @@ This file should be placed anywhere you want your screensaver to be visible to t
 
 2) get_screen_saver_images.SQL shows the DDL for the SP that gets the picture records from wordpress DB.
 Again, it relies on the availability of nggallery tables on your site.
+
+If you have questions, please shoot me an email: k@theSilentCamera.com
