@@ -1,11 +1,14 @@
-This folder has two files:
+This repo has two files:
 1) index.php 
-Thid file will be used to render the images to Google Picasa Screensaver clients.
-You can test that it works by browsing to it on your site and making sure it has the correct relative path to wordpress setup.
-Also remember that you need nggallery plugin on your wordpress setup. You may use other plugins but the code may have to change a little bit.
+This file will be used to call wordpress DB, fetch the image records and render them to Google/Picasa Screensaver clients.
+You can test that the repo works by browsing to the php file on your site. 
+Please make sure you read the comments in the code. 
+Also remember that you need both wordpress and nggallery plugin running on your site. 
 This file should be placed anywhere you want your screensaver to be visible to the public.
 
-2) get_screen_saver_images.SQL shows the DDL for the SP that gets the picture records from wordpress DB.
-Again, it relies on the availability of nggallery tables on your site.
+2) get_screen_saver_images.SQL 
+shows the DDL that will create the stored procedure(mySQL) responsible for fetching the picture records from your wordpress DB.
+You could modify the SP to limit the number of images it returns or the order of the pictures.
+If you are using other plugins to manage your wordpress pictures/galleries, you may need to modify the stored procedure a bit.
 
 If you have questions, please shoot me an email: k@theSilentCamera.com
