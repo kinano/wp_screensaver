@@ -1,5 +1,5 @@
 ﻿delimiter $
-CREATE PROCEDURE `get_screen_saver_images`()
+CREATE PROCEDURE `get_screen_saver_images`(IN includeNudes TINYINT(1))
 BEGIN
     -- Gets 100 random pictures from wp DB(provided that it has nggallery plugin installed)
     select
@@ -25,6 +25,8 @@ BEGIN
       `wp_ngg_pictures`.`meta_data` AS `meta_data`
   from
       `wp_ngg_gallery` join `wp_ngg_pictures` on `wp_ngg_gallery`.`gid` = `wp_ngg_pictures`.`galleryid`
+  where
+      wp_ngg_gallery.nude = includeNudes
   order by
       rand() limit 0,100;
 END
