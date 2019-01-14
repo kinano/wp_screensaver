@@ -19,7 +19,7 @@
 		$title = html_entity_decode($row->title);
 		$photos[] = array(
 			'url' => "$link" ,
-			'owner' => "$site_name.' '.$site_description). ' '. $row->imagedate",
+			'owner' => "$site_name $site_description $row->imagedate",
 			'title' => "$title"
 		);		
 	}
