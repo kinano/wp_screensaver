@@ -10,16 +10,16 @@
 	$result = $mysqli->query($sql);
 	$url	=	site_url();
 	$site_name	=	get_bloginfo();
-	$site_description	=	get_bloginfo ( 'description' );
 	header('Content-type: application/json');
 	$photos = array();
     while ($row = $result->fetch_object())
-    {
+    {	
 		$link = $url.'/'.$row->path.'/'.$row->filename;
 		$title = html_entity_decode($row->title);
 		$photos[] = array(
 			'url' => "$link" ,
-			'owner' => "$site_name $site_description $row->imagedate",
+			'credit' => "$site_name",
+			'date' => "$row->imagedate",
 			'title' => "$title"
 		);		
 	}
